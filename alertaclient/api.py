@@ -86,6 +86,9 @@ class Client:
     def untag_alert(self, id, tags):
         return self.http.put('/alert/%s/untag' % id, {'tags': tags})
 
+    def update_ticket(self, id, ticket):
+        return self.http.put('/alert/%s/ticket' % id, ticket)
+    
     def update_attributes(self, id, attributes):
         data = {
             'attributes': attributes

@@ -53,7 +53,7 @@ class Config:
     def get_remote_config(self):
         config_url = '{}/config'.format(self.options['endpoint'])
         try:
-            r = requests.get(config_url)
+            r = requests.get(config_url, verify=False)
             remote_config = r.json()
         except requests.RequestException as e:
             raise
